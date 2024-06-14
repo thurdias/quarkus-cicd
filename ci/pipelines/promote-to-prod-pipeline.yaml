@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: promote-to-prod-pipeline
+spec:
+  tasks:
+    - name: promote
+      taskRef:
+        name: promote-task
