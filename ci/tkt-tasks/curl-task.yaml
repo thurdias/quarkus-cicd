@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: curl-task
+spec:
+  steps:
+    - name: curl
+      image: curlimages/curl:latest
+      script: |
+        curl -X POST -H "Content-Type: application/json" -d '{"status": "success"}' http://example.com/webhook

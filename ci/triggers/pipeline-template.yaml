@@ -1,0 +1,25 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: pipeline-template
+spec:
+  params:
+    - name: gitrevision
+    - name: gitrepositoryurl
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: build-pipeline-run-
+      spec:
+        pipelineRef:
+          name: build-pipeline
+        resources:
+          - name: source-repo
+            resourceSpec:
+              type: git
+              params:
+                - name: url
+                  value: $(params.gitrepositoryurl)
+                - name: revision
+                  value: $(params.gitrevision)

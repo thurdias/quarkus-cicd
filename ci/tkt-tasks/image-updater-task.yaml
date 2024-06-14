@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: docker-build-task
+spec:
+  steps:
+    - name: docker-build
+      image: gcr.io/cloud-builders/docker
+      script: |
+        docker build -t arthurdbs/challenge-01:latest .
+        docker push arthurdbs/challenge-01:latest
