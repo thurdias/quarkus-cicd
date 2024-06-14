@@ -1,0 +1,5 @@
+resources:
+  - prod-namespace.yaml
+  - prod-deployment.yaml
+  - prod-route.yaml
+  - prod-ingress.yaml
