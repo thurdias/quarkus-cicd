@@ -1,1 +1,1 @@
-# quarkus-cicd
+# Continuous Integration
