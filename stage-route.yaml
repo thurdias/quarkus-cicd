@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: quarkus
+  namespace: stage
+spec:
+  to:
+    kind: Service
+    name: quarkus
+  port:
+    targetPort: 8080
