@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: quarkus
   namespace: stage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: quarkus
   template:
     metadata:
       labels:
-        app: my-app
+        app: quarkus
     spec:
       containers:
-      - name: my-app
+      - name: quarkus
         image: arthurdbs/challenge-01:latest
         ports:
         - containerPort: 8080

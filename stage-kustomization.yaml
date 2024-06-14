@@ -1,0 +1,5 @@
+resources:
+  - stage-namespace.yaml
+  - stage-deployment.yaml
+  - stage-route.yaml
+  - stage-ingress.yaml
